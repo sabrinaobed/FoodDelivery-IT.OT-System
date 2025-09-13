@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoodDelivery_OT_Simulator.DTOs
 {
-    public class OrderDTO
+    public record OrderDTO
     (
     int OrderId,        // Unique order id assigned by IT
     string CustomerName,// Who the food is for (shown in OT logs)
