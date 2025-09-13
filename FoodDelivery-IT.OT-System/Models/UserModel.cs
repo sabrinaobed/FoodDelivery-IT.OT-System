@@ -9,8 +9,7 @@ namespace FoodDelivery_IT.OT_System.Models
 {
     public class UserModel
     {
-        public class User
-        {
+       
             [Key]
             public int UserId { get; set; }   // primary key
 
@@ -25,6 +24,6 @@ namespace FoodDelivery_IT.OT_System.Models
 
             [Required, MaxLength(50)]
             public string Role { get; set; } = "Staff"; // default role = Staff
-        }
+        
     }
 }

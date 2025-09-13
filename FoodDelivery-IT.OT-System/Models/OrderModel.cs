@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FoodDelivery_IT.OT_System.Enum;
+
 
 namespace FoodDelivery_IT.OT_System.Models
 {
@@ -21,7 +23,7 @@ namespace FoodDelivery_IT.OT_System.Models
         [Range(1, 100)]
         public int Quantity { get; set; }
 
-        //public OrderStatus Status { get; set; } = OrderStatus.Placed;
+        public OrderStatus OrderStatus { get; set; } = OrderStatus.Placed;
 
         public bool SentToOT { get; set; } = false; // has it been sent to OT system
 
