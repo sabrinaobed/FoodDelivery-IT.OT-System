@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDelivery-IT-System", "FoodDelivery-IT.OT-System\FoodDelivery-IT-System.csproj", "{A7B62632-2E82-4A25-9B53-7536339F0E2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDelivery-IT.OT-System", "FoodDelivery-IT.OT-System\FoodDelivery-IT.OT-System.csproj", "{A7B62632-2E82-4A25-9B53-7536339F0E2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

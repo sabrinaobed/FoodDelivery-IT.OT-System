@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace FoodDelivery_IT.OT_System.Menu
 {
-    public class Menu
+    public class Meny
     {
         private readonly AuthService _authService;
         private readonly OrderService _orderService;
 
 
-        public Menu(AuthService authService, OrderService orderSrvice)
+        public Meny(AuthService authService, OrderService orderSrvice)
         {
             _authService = authService;
             _orderService = orderSrvice;
