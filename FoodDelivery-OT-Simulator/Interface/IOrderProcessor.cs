@@ -11,6 +11,6 @@ namespace FoodDelivery_OT_Simulator.Interface
     public interface IOrderProcessor
     {
         ReceiptDTO ReceiveOrder(OrderDTO order);
-        (bool found, string status) GetStatus(int orderId);
+        public (bool found, string status) GetStatus(int orderId);
     }
 }
