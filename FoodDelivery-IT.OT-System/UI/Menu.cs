@@ -67,7 +67,7 @@ namespace FoodDelivery_IT.OT_System.UI
                 return;
             }
 
-            Console.WriteLine("#  Customer        Dish            Qty  Status       SentToOT  CreatedBy              CreatedAt");
+            Console.WriteLine("#  Customer       Dish           Qty  Status      SentToOT  CreatedBy              CreatedAt");
             foreach (var o in all)
             {
                 Console.WriteLine($"{o.OrderId,-3}{o.CustomerName,-15}{o.DishName,-16}{o.Quantity,-4}{o.OrderStatus,-12}{o.SentToOT,-9}{o.CreatedBy,-22}{o.CreatedAt:yyyy-MM-dd HH:mm}");
