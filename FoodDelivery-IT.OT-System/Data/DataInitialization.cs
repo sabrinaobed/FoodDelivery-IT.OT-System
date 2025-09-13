@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FoodDelivery_IT.OT_System.Data
 {
-    public class DataInitiakization
+    public class DataInitialization
     {
         public static void Seed()//this method seeds initial data into the database
         {
