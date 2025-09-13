@@ -1,10 +1,8 @@
 ﻿using FoodDelivery_IT.OT_System.Data;
 using FoodDelivery_IT.OT_System.Interfaces;
-using FoodDelivery_IT.OT_System.Menu;
 using FoodDelivery_IT.OT_System.Services;
+using FoodDelivery_IT.OT_System.UI;     // <-- add this
 using Microsoft.Extensions.DependencyInjection;
-using FoodDelivery_IT.OT_System.Data;
-using FoodDelivery_IT.OT_System.Menu;
 
 namespace FoodDelivery_IT.OT_System
 {
@@ -20,12 +18,11 @@ namespace FoodDelivery_IT.OT_System
                 .AddScoped<IOrderService, OrderService>()
                 .BuildServiceProvider();
 
-            // Resolve dependencies
             var auth = services.GetRequiredService<IAuthService>();
             var orders = services.GetRequiredService<IOrderService>();
 
-            // Run the menu
-            Meny menu = new Meny((AuthService)auth, (OrderService)orders);
+            var menu = new Menu(auth, orders);
+            menu.Start();
         }
     }
 }
