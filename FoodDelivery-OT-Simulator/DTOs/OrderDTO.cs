@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FoodDelivery_OT_Simulator.DTOs
 {
-    internal class OrderDTO
-    {
-    }
+    public class OrderDTO
+    (
+    int OrderId,        // Unique order id assigned by IT
+    string CustomerName,// Who the food is for (shown in OT logs)
+    string DishName,    // What to prepare
+    int Quantity        // How many portio
+    );
 }
