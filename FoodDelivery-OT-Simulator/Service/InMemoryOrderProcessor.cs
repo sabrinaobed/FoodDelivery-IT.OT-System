@@ -2,34 +2,36 @@
 using FoodDelivery_OT_Simulator.Interface;
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FoodDelivery_OT_Simulator.Service
 {
-    public class InMemoryOrderProcessor :IOrderProcessor
+    public class InMemoryOrderProcessor : IOrderProcessor
     {
         private readonly ConcurrentDictionary<int, string> _statuses = new();
 
         public ReceiptDTO ReceiveOrder(OrderDTO order)
         {
-            _statuses[order.OrderId ] = "Processing";
-            Console.WriteLine($"[Kitchen/OT] Received order #{order.OrderId} for {order.CustomerName}: {order.DishName} x{order.Quantity}");
+            // 1) Show that the kitchen has received the order (human-friendly)
+            Console.WriteLine($"[Kitchen] Order #{order.OrderId} Placed: {order.DishName} x {order.Quantity} for {order.CustomerName}");
 
+            // 2) Mark as Processing and log it
+            _statuses[order.OrderId] = "Processing";
+            Console.WriteLine($"[Kitchen] Order #{order.OrderId}: Processing");
+
+            // 3) Simulate preparation: after 2 seconds, mark as Sent to rider
             _ = Task.Run(async () =>
             {
                 await Task.Delay(2000);
                 _statuses[order.OrderId] = "Sent";
-                Console.WriteLine($"[GivenToRider/OT] Order #{order.OrderId} -> Sent (given to rider).");
+                Console.WriteLine($"[Kitchen] Order #{order.OrderId}: Sent to rider");
             });
 
+            // Immediate receipt back to caller
             return new ReceiptDTO(order.OrderId, "Processing", DateTime.UtcNow);
         }
 
         public (bool found, string status) GetStatus(int orderId)
             => _statuses.TryGetValue(orderId, out var s) ? (true, s) : (false, "");
     }
-    
 }
