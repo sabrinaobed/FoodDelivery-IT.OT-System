@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FoodDelivery-IT.OT-System\FoodDelivery-IT.OT-System.csproj" />
+  </ItemGroup>
+
 </Project>
