@@ -11,4 +11,10 @@
     <ProjectReference Include="..\FoodDelivery-IT.OT-System\FoodDelivery-IT.OT-System.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
