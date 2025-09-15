@@ -55,7 +55,7 @@ class Program
 
                 if (unsent.Count == 0)
                 {
-                    Console.WriteLine("No new orders found. Waiting...");// nothing to do
+                    Console.WriteLine("No new orders found. Waiting...");// did changes here
                     await Task.Delay(TimeSpan.FromSeconds(polls));
                     continue;
                 }
