@@ -25,7 +25,7 @@ namespace Integration.Agent
                 _http.Timeout = TimeSpan.FromSeconds(timeoutSeconds); //set timeout for all requests
 
                 //if caller supplied an API key 
-                if(!string.IsNullOrWhiteSpace(apiKey) && _http.DefaultRequestHeaders.Contains("X-Api-Key"))
+                if(!string.IsNullOrWhiteSpace(apiKey) && !_http.DefaultRequestHeaders.Contains("X-Api-Key"))
                     _http.DefaultRequestHeaders.Add("X-Api-Key", apiKey);
             }
 
